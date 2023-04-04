@@ -10,13 +10,55 @@
     <link
       href="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c10e6c60bac_RevoU%20centered.svg"
       rel="apple-touch-icon" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="./output.css" rel="stylesheet" />
     <title>TMW</title>
   </head>
-  <body class="bg-slate-500">
-    <form action=""></form>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="bg-slate-200">
+    <header>
+      <div class="flex justify-between items-center max-w-screen-xl mx-auto py-6">
+        <a
+          class="group block text-4xl hover:text-sky-600 font-bold leading-[1.2] sm:leading-[1.1] sm:text-6xl"
+          href="/">
+          TMW<span class="text-sky-600 group-hover:text-black">.</span>
+        </a>
 
-    <script></script>
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search a movie or a series"
+            class="bg-slate-300 py-3 pl-12 pr-4 rounded-full focus:outline-none focus:ring-2 focus:ring-sky-600" />
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="absolute h-[1.25em] top-1/2 -translate-y-1/2 left-4">
+            <path
+              fill-rule="evenodd"
+              d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+
+        <a
+          href="/watchlist"
+          class="py-3 px-6 bg-slate-300 hover:bg-sky-600 hover:text-slate-200 rounded-full font-medium text-slate-700">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="inline-block h-[1em] mr-1">
+            <path
+              fill-rule="evenodd"
+              d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z"
+              clip-rule="evenodd" />
+          </svg>
+
+          <span>Watchlist</span>
+        </a>
+      </div>
+    </header>
+
+    <script src="./main.js"></script>
   </body>
 </html>
