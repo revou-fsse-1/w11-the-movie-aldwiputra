@@ -29,6 +29,12 @@
       "password": "cihuy123",
       "email": "cihuy123@gmail.com",
       "id": 5
+    },
+    {
+      "username": "aldi",
+      "email": "aldi@gmail.com",
+      "password": "aldi",
+      "id": 6
     }
   ],
   "movies": [
