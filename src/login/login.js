@@ -50,19 +50,25 @@ function showToast(status, message) {
   if (toast.classList.contains('-translate-y-60')) {
     if (status === 'success') {
       toast.children[0].src = '../assets/icon-check.svg';
-      toast.children[2].classList.add('text-green-700');
-      toast.classList.add('bg-green-400', 'ring-green-700');
+      if (toast.classList.contains('bg-red-400')) {
+        toast.children[2].classList.replace('text-red-700', 'text-green-700');
+        toast.classList.replace('bg-red-400', 'bg-green-400');
+        toast.classList.replace('ring-red-700', 'ring-green-700');
+      } else {
+        toast.children[2].classList.add('text-green-700');
+        toast.classList.add('bg-green-400', 'ring-green-700');
+      }
     } else {
       toast.children[0].src = '../assets/icon-x.svg';
       toast.children[2].classList.add('text-red-700');
       toast.classList.add('bg-red-400', 'ring-red-700');
-
-      setTimeout(() => {
-        toast.classList.replace('-translate-y-0', '-translate-y-60');
-      }, 2000);
     }
     toast.children[2].innerText = message;
     toast.classList.remove('invisible');
     toast.classList.replace('-translate-y-60', '-translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.replace('-translate-y-0', '-translate-y-60');
+    }, 2000);
   }
 }
