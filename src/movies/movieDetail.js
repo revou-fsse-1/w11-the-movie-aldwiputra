@@ -10,7 +10,27 @@ const movieDescription = document.querySelector('#movie-description');
 const movieRating = document.querySelector('#movie-rating');
 const movieTrailer = document.querySelector('#movie-trailer');
 
-renderMovie();
+renderMovie().then((res) => {
+  removeWatchlistButton.addEventListener('click', async (event) => {
+    const deleteResult = await deleteMovieFromWatchlist(res.id);
+    if (!deleteResult.success) {
+      console.log(deleteResult.message);
+      return;
+    }
+
+    renderMovie();
+  });
+
+  addWatchlistButton.addEventListener('click', async (event) => {
+    const result = await addMovieToWatchlist(res);
+    if (!result.success) {
+      console.log(result);
+      return;
+    }
+
+    renderMovie();
+  });
+});
 
 async function renderMovie() {
   const res = await getMovieById(id);
@@ -25,8 +45,10 @@ async function renderMovie() {
   if (watchlistedMovie.data.length) {
     addWatchlistButton.classList.add('hidden');
     removeWatchlistButton.classList.remove('invisible');
+    removeWatchlistButton.classList.remove('hidden');
   } else {
     removeWatchlistButton.classList.add('hidden');
+    addWatchlistButton.classList.remove('hidden');
     addWatchlistButton.classList.remove('invisible');
   }
 
@@ -37,27 +59,7 @@ async function renderMovie() {
   movieRating.innerText = res.data.rating;
   movieTrailer.src = res.data.trailer;
 
-  removeWatchlistButton.addEventListener('click', async (event) => {
-    const deleteResult = await deleteMovieFromWatchlist(res.data.id);
-    if (!deleteResult.success) {
-      console.log(deleteResult.message);
-      return;
-    }
-
-    alert('Delete movie from watchlist successfully');
-    location.reload();
-  });
-
-  addWatchlistButton.addEventListener('click', async (event) => {
-    const result = await addMovieToWatchlist(res.data);
-    if (!result.success) {
-      console.log(result);
-      return;
-    }
-
-    alert('Added movie from watchlist successfully');
-    location.reload();
-  });
+  return res.data;
 }
 
 async function findWatchlistById(id) {
