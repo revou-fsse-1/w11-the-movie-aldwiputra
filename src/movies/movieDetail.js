@@ -3,6 +3,7 @@ const urlComponents = location.pathname.split('/');
 const id = urlComponents[urlComponents.length - 2];
 
 const addWatchlistButton = document.querySelector('#add-to-watchlist');
+const removeWatchlistButton = document.querySelector('#remove-from-watchlist');
 const posterImage = document.querySelector('#poster-image');
 const genresContainer = document.querySelector('#genres');
 const movieDescription = document.querySelector('#movie-description');
@@ -19,12 +20,61 @@ async function renderMovie() {
     return;
   }
 
+  const watchlistedMovie = await findWatchlistById(res.data.id);
+
+  if (watchlistedMovie.data.length) {
+    addWatchlistButton.classList.add('hidden');
+    removeWatchlistButton.classList.remove('invisible');
+  } else {
+    removeWatchlistButton.classList.add('hidden');
+    addWatchlistButton.classList.remove('invisible');
+  }
+
   posterImage.src = res.data.image;
   genresContainer.innerHTML = res.data.genre.map((genre) => genreComponent(genre)).join('');
   movieDescription.innerText = res.data.synopsis;
-  movieDescription.classList.add('line-clamp-6');
+  movieDescription.classList.add('line-clamp-5');
   movieRating.innerText = res.data.rating;
   movieTrailer.src = res.data.trailer;
+
+  removeWatchlistButton.addEventListener('click', async (event) => {
+    const deleteResult = await deleteMovieFromWatchlist(res.data.id);
+    if (!deleteResult.success) {
+      console.log(deleteResult.message);
+      return;
+    }
+
+    alert('Delete movie from watchlist successfully');
+    location.reload();
+  });
+
+  addWatchlistButton.addEventListener('click', async (event) => {
+    const result = await addMovieToWatchlist(res.data);
+    if (!result.success) {
+      console.log(result);
+      return;
+    }
+
+    alert('Added movie from watchlist successfully');
+    location.reload();
+  });
+}
+
+async function findWatchlistById(id) {
+  try {
+    const res = await fetch(`${API_ENDPOINT}/watchlist?id=${id}`);
+    const data = await res.json();
+
+    return {
+      success: true,
+      data: data,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: error,
+    };
+  }
 }
 
 async function getMovieById(id) {
@@ -32,13 +82,49 @@ async function getMovieById(id) {
     const res = await fetch(`${API_ENDPOINT}/movies/${id}`);
     const data = await res.json();
 
-    console.log(data);
     return {
       success: true,
       data,
     };
   } catch (error) {
     console.log(error);
+  }
+}
+
+async function deleteMovieFromWatchlist(id) {
+  try {
+    const res = await fetch(`${API_ENDPOINT}/watchlist/${id}`, {
+      method: 'DELETE',
+    });
+    const data = await res.json();
+
+    return {
+      success: true,
+      data,
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function addMovieToWatchlist(movie) {
+  try {
+    const res = await fetch(`${API_ENDPOINT}/watchlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(movie),
+    });
+    const data = await res.json();
+
+    return {
+      success: true,
+      data: data,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: error.message,
+    };
   }
 }
 
