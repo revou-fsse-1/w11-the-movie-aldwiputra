@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38cd504c60bad_RevoU%20favicon.svg"
+      rel="shortcut icon"
+      type="image/x-icon" />
+    <link
+      href="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c10e6c60bac_RevoU%20centered.svg"
+      rel="apple-touch-icon" />
+    <link href="../../output.css" rel="stylesheet" />
+    <title>TMW - Movie Detail</title>
+  </head>
+  <body class="bg-slate-200 overflow-x-hidden">
+    <header class="border-b-2 border-slate-500/5 px-6 xl:px-0">
+      <div class="flex md:justify-between items-center max-w-screen-xl mx-auto py-6">
+        <a
+          class="group block text-4xl text-slate-700 hover:text-sky-600 font-bold leading-[1.2] md:leading-[1.1] md:text-5xl"
+          href="/">
+          TMW<span class="text-sky-600 group-hover:text-slate-700">.</span>
+        </a>
+
+        <div
+          class="relative ml-auto md:ml-0 w-8 md:w-auto md:max-w-[20rem] mr-6 md:mr-0 aspect-square md:aspect-auto">
+          <input
+            type="text"
+            placeholder="Search a movie or a series"
+            class="bg-slate-300 py-3 pl-6 md:pl-12 pr-6 w-full rounded-full focus:outline-none focus:ring-2 focus:ring-sky-600" />
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="absolute h-[1.25em] top-1/2 -translate-y-1/2 left-[.8rem] md:left-4">
+            <path
+              fill-rule="evenodd"
+              d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+
+        <a
+          href="/watchlist"
+          class="py-3 px-4 aspect-square md:aspect-auto md:px-6 bg-slate-300 hover:bg-sky-600 hover:text-slate-200 rounded-full font-semibold text-slate-700 hover:shadow-lg hover:shadow-sky-600/20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="inline-block h-[1em] md:mr-1">
+            <path
+              fill-rule="evenodd"
+              d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z"
+              clip-rule="evenodd" />
+          </svg>
+
+          <span class="hidden md:inline-block">Watchlist</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="text-slate-700 py-10 px-6 xl:px-0">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-bold">Avatar</h1>
+          <button
+            class="font-semibold align-middle bg-slate-300 rounded-full px-3 md:px-6 py-3 hover:bg-sky-600 hover:text-slate-200 hover:shadow-lg hover:shadow-sky-600/20">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-[1.5em] inline-block align-middle md:mr-1">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="md:inline-block align-middle hidden">Add to Watchlist</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-6">
+          <div class="col-span-1 md:col-span-7 row-start-2 md:row-start-1 flex gap-4">
+            <img
+              class="aspect-[2/3] w-[12.5rem] h-fit rounded-lg hidden md:block"
+              src="https://media.21cineplex.com/webcontent/gallery/pictures/16625437697033_405x594.jpg"
+              alt="movie poster" />
+            <div>
+              <div class="font-medium flex gap-4 flex-wrap text-sm">
+                <span class="block px-3 py-1 border-2 border-slate-700 rounded-full">Action</span>
+                <span class="block px-3 py-1 border-2 border-slate-700 rounded-full">Sci-Fi</span>
+              </div>
+              <p class="font-medium max-w-[40ch] leading-normal mt-6 text-sm lg:text-base">
+                Avatar akan kembali ke layar lebar.Seorang Marinir lumpuh dikirim ke bulan Pandora
+                untuk menjalani misi khusus namun, ia justru dilema antara mengikuti perintah atau
+                melindungi dunia baru yang pelan-pelan ia panggil rumah.
+              </p>
+              <div class="block mt-6 font-medium">
+                <span class="text-slate-500 text-sm lg:text-base">IMDb Rating</span>
+                <div class="flex items-center gap-1 mt-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-5 h-5 lg:w-7 lg:h-7 fill-amber-500">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span class="inline-block font-bold text-xl md:text-2xl leading-none">8.7</span>
+                  <span class="inline-block font-medium text-xl md:text-2xl leading-none">
+                    /10</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aspect-[16/9] md:aspect-auto row-start-1 col-span-1 md:col-span-5">
+            <iframe
+              class="rounded-xl w-full h-full"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/NZrX_ES93JA"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../movieDetail.js"></script>
+  </body>
+</html>

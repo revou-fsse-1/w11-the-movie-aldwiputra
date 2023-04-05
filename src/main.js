@@ -4,9 +4,9 @@ const currentlyWatchingContainer = document.querySelector('#currently-watching-l
 const suggestedWatchContainer = document.querySelector('#suggested-watch-list');
 const previouslyWatchedContainer = document.querySelector('#previously-watched-list');
 
-loadAllMovies();
+renderAllMovies();
 
-async function loadAllMovies() {
+async function renderAllMovies() {
   const res = await getAllMovies();
 
   if (!res.success) {
@@ -64,11 +64,10 @@ async function getAllMovies() {
 }
 
 function movieComponent(data) {
-  console.log(data.image);
   return `
     <a
       href="/movies/${data.id}"
-      class="group relative max-w-[8rem] shrink-0 w-[8rem] rounded-lg overflow-hidden bg-zinc-700">
+      class="group relative max-w-[8.5rem] shrink-0 w-[8.5rem] rounded-xl overflow-hidden bg-zinc-700">
       <img
         class="w-full aspect-[2/3]"
         src="${data.image}" />

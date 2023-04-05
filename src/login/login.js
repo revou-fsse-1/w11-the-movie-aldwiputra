@@ -16,14 +16,18 @@ formLogin.addEventListener('submit', async (event) => {
   }
 
   const { data } = await findUser(usernameInput.value);
-  const isValid = data[0]?.username === username.value && data[0]?.password === password.value;
+  const isValid =
+    data[0]?.username === usernameInput.value && data[0]?.password === passwordInput.value;
+
+  console.log(password);
 
   if (!isValid) {
     showToast('error', 'Invalid username or password. Please try again.');
   } else {
     showToast('success', 'Login success. Redirecting now...');
+    cleanAllInputs();
     setTimeout(() => {
-      localStorage.setItem('loggedInUser', username.value);
+      localStorage.setItem('loggedInUser', usernameInput.value);
       window.location.pathname = '/';
     }, 2000);
   }
@@ -44,6 +48,11 @@ async function findUser(username) {
       message: error,
     };
   }
+}
+
+function cleanAllInputs() {
+  usernameInput.value = '';
+  passwordInput.value = '';
 }
 
 function showToast(status, message) {
