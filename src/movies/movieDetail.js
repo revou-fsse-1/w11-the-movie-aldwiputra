@@ -22,6 +22,7 @@ async function renderMovie() {
   posterImage.src = res.data.image;
   genresContainer.innerHTML = res.data.genre.map((genre) => genreComponent(genre)).join('');
   movieDescription.innerText = res.data.synopsis;
+  movieDescription.classList.add('line-clamp-6');
   movieRating.innerText = res.data.rating;
   movieTrailer.src = res.data.trailer;
 }
