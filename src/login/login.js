@@ -19,15 +19,15 @@ formLogin.addEventListener('submit', async (event) => {
   const isValid =
     data[0]?.username === usernameInput.value && data[0]?.password === passwordInput.value;
 
-  console.log(password);
+  console.log(data);
 
   if (!isValid) {
     showToast('error', 'Invalid username or password. Please try again.');
   } else {
     showToast('success', 'Login success. Redirecting now...');
-    cleanAllInputs();
     setTimeout(() => {
       localStorage.setItem('loggedInUser', usernameInput.value);
+      cleanAllInputs();
       window.location.pathname = '/';
     }, 2000);
   }

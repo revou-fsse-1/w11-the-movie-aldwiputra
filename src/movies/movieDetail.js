@@ -11,6 +11,8 @@ const movieRating = document.querySelector('#movie-rating');
 const movieTrailer = document.querySelector('#movie-trailer');
 
 renderMovie().then((res) => {
+  // Add event listeners after first render movie
+
   removeWatchlistButton.addEventListener('click', async (event) => {
     removeWatchlistButton.disabled = true;
     addWatchlistButton.disabled = true;

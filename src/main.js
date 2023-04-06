@@ -4,6 +4,26 @@ const currentlyWatchingContainer = document.querySelector('#currently-watching-l
 const suggestedWatchContainer = document.querySelector('#suggested-watch-list');
 const previouslyWatchedContainer = document.querySelector('#previously-watched-list');
 
+const main = document.querySelector('#main-content');
+const watchlistLinkButton = document.querySelector('#watchlist-link');
+const user = localStorage.getItem('loggedInUser');
+
+if (!user) {
+  watchlistLinkButton.classList.add('invisible');
+  main.classList.remove('invisible');
+
+  main.innerHTML = `
+    <div class="w-fit mx-auto text-center flex flex-col items-center">
+      <h1 class="text-3xl text-center font-semibold mt-24 text-slate-700">You're not logged in. Redirecting now...</h1>
+      <img src="./assets/illustration-lock.png" alt="unlock illustration" class="text-center mt-12 -translate-x-8"/>
+    </div>
+  `;
+
+  setTimeout(() => {
+    window.location.pathname = '/login';
+  }, 2000);
+}
+
 renderAllMovies();
 
 async function renderAllMovies() {

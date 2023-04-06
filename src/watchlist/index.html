@@ -15,8 +15,8 @@
     <link
       href="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c10e6c60bac_RevoU%20centered.svg"
       rel="apple-touch-icon" />
-    <link href="./output.css" rel="stylesheet" />
-    <title>TMW</title>
+    <link href="../output.css" rel="stylesheet" />
+    <title>TMW - Watchlist</title>
   </head>
   <body class="bg-slate-200 overflow-x-hidden">
     <header class="border-b-2 border-slate-500/5 px-6 xl:px-0">
@@ -47,7 +47,6 @@
         </div>
 
         <a
-          id="watchlist-link"
           href="/watchlist"
           class="py-3 px-4 aspect-square md:aspect-auto md:px-6 bg-slate-300 hover:bg-sky-600 hover:text-slate-200 rounded-full font-semibold text-slate-700 hover:shadow-lg hover:shadow-sky-600/20">
           <svg
@@ -67,28 +66,9 @@
     </header>
 
     <main class="text-slate-700 px-6 xl:px-0">
-      <div id="main-content" class="max-w-screen-xl mx-auto py-10">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4">
-          <section id="currently-watching" class="col-auto md:col-span-5">
-            <h3 class="font-semibold text-lg">Currently Watching</h3>
-            <div
-              id="currently-watching-list"
-              class="flex mt-4 gap-4 overflow-normal flex-wrap md:overflow-auto md:flex-nowrap"></div>
-          </section>
-          <section id="suggested-watch" class="col-auto md:col-span-7">
-            <h3 class="font-semibold text-lg">Suggested to Watch</h3>
-            <div
-              id="suggested-watch-list"
-              class="flex mt-4 gap-4 overflow-normal flex-wrap md:overflow-auto md:flex-nowrap"></div>
-          </section>
-        </div>
-        <section id="previously-watched" class="mt-10">
-          <h3 class="font-semibold text-lg">Previously Watched</h3>
-          <div id="previously-watched-list" class="flex mt-4 gap-4 overflow-normal flex-wrap"></div>
-        </section>
-      </div>
+      <div id="main-content" class="max-w-screen-xl mx-auto py-10"></div>
     </main>
 
-    <script src="./main.js"></script>
+    <script src="./watchlist.js"></script>
   </body>
 </html>
