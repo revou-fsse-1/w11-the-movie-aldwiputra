@@ -15,11 +15,15 @@ formLogin.addEventListener('submit', async (event) => {
     return;
   }
 
-  const { data } = await findUser(usernameInput.value);
-  const isValid =
-    data[0]?.username === usernameInput.value && data[0]?.password === passwordInput.value;
+  const userResult = await findUser(usernameInput.value);
+  if (!userResult.success) {
+    showToast('error', 'Server error. Please turn on the json-server');
+    return;
+  }
 
-  console.log(data);
+  const isValid =
+    userResult.data[0]?.username === usernameInput.value &&
+    userResult.data[0]?.password === passwordInput.value;
 
   if (!isValid) {
     showToast('error', 'Invalid username or password. Please try again.');

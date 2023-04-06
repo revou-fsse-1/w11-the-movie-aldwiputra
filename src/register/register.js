@@ -34,6 +34,11 @@ formRegister.addEventListener('submit', async (event) => {
 
   const userWithUsername = await findUser('username', usernameInput.value);
   const userWithEmail = await findUser('email', emailInput.value);
+  if (!userWithUsername.success || !userWithEmail.success) {
+    showToast('error', 'Server error. Please turn on the json-server');
+    return;
+  }
+
   if (userWithUsername.data.length > 0 || userWithEmail.data.length > 0) {
     showToast('error', 'Username or email already used');
     return;
