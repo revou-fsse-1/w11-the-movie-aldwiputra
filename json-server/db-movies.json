@@ -338,32 +338,32 @@
   ],
   "watchlist": [
     {
-      "id": 6,
-      "title": "The Dark Knight",
-      "image": "https://th.bing.com/th/id/OIP.NN9rKH-vZbFgtH4FuoW7OwHaLH?w=115&h=180&c=7&r=0&o=5&pid=1.7",
-      "synopsis": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-      "year": 2008,
+      "id": 10,
+      "title": "Avengers: Infinity War",
+      "image": "https://th.bing.com/th/id/OIP.ZkOmuqOWNqKDYkMKe2YeAgHaK-?w=204&h=303&c=7&r=0&o=5&pid=1.7",
+      "synopsis": "The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, Thanos is prepared to go to any lengths to carry out his insane plan.",
+      "year": 2018,
       "genre": [
         "Action",
-        "Crime",
-        "Drama"
+        "Adventure",
+        "superhero"
       ],
-      "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY",
-      "rating": 9,
+      "trailer": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+      "rating": 8.4,
       "isWatched": false
     },
     {
-      "id": 1,
-      "title": "Avatar",
-      "image": "https://media.21cineplex.com/webcontent/gallery/pictures/16625437697033_405x594.jpg",
-      "synopsis": "Avatar akan kembali ke layar lebar.Seorang Marinir lumpuh dikirim ke bulan Pandora untuk menjalani misi khusus namun, ia justru dilema antara mengikuti perintah atau melindungi dunia baru yang pelan-pelan ia panggil rumah",
+      "id": 2,
+      "title": "One Piece Film: Red",
+      "image": "https://m.media-amazon.com/images/M/MV5BNDBhM2IxMzItOTdmZi00NmMzLWFlNTgtN2E2MDRjODU4NzEzXkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_FMjpg_UX1000_.jpg",
+      "synopsis": "Untuk pertama kalinya, Uta - penyanyi paling dicintai akan mengungkapkan dirinya kepada dunia di konser langsungnya. Suara yang ditunggu-tunggu oleh seluruh dunia akan segera bergema.",
       "genre": [
-        "Action",
+        "Animation",
         "Adventure",
         "Fantasy"
       ],
       "production": "20th Century Studios",
-      "trailer": "https://www.youtube.com/embed/NZrX_ES93JA",
+      "trailer": "https://www.youtube.com/embed/89JWRYEIG-s",
       "rating": 8.5,
       "isWatch": false,
       "isPrevious": false

@@ -12,23 +12,39 @@ const movieTrailer = document.querySelector('#movie-trailer');
 
 renderMovie().then((res) => {
   removeWatchlistButton.addEventListener('click', async (event) => {
+    removeWatchlistButton.disabled = true;
+    addWatchlistButton.disabled = true;
+
     const deleteResult = await deleteMovieFromWatchlist(res.id);
     if (!deleteResult.success) {
       console.log(deleteResult.message);
       return;
     }
 
+    showToast('success', 'Movie <strong>removed</strong> from watchlist');
     renderMovie();
+    setTimeout(() => {
+      removeWatchlistButton.disabled = false;
+      addWatchlistButton.disabled = false;
+    }, 2000);
   });
 
   addWatchlistButton.addEventListener('click', async (event) => {
+    addWatchlistButton.disabled = true;
+    removeWatchlistButton.disabled = true;
+
     const result = await addMovieToWatchlist(res);
     if (!result.success) {
       console.log(result);
       return;
     }
 
+    showToast('success', 'Movie <strong>added</strong> to watchlist');
     renderMovie();
+    setTimeout(() => {
+      addWatchlistButton.disabled = false;
+      removeWatchlistButton.disabled = false;
+    }, 2000);
   });
 });
 
@@ -134,4 +150,31 @@ function genreComponent(genre) {
   return `
     <span class="block px-3 py-1 border-2 border-slate-700 rounded-full">${genre}</span>
   `;
+}
+
+function showToast(status, message) {
+  if (toast.classList.contains('-translate-y-60')) {
+    if (status === 'success') {
+      toast.children[0].src = '../../assets/icon-check.svg';
+      if (toast.classList.contains('bg-red-400')) {
+        toast.children[2].classList.replace('text-red-700', 'text-green-700');
+        toast.classList.replace('bg-red-400', 'bg-green-400');
+        toast.classList.replace('ring-red-700', 'ring-green-700');
+      } else {
+        toast.children[2].classList.add('text-green-700');
+        toast.classList.add('bg-green-400', 'ring-green-700');
+      }
+    } else {
+      toast.children[0].src = '../../assets/icon-x.svg';
+      toast.children[2].classList.add('text-red-700');
+      toast.classList.add('bg-red-400', 'ring-red-700');
+    }
+    toast.children[2].innerHTML = message;
+    toast.classList.remove('invisible');
+    toast.classList.replace('-translate-y-60', '-translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.replace('-translate-y-0', '-translate-y-60');
+    }, 2000);
+  }
 }

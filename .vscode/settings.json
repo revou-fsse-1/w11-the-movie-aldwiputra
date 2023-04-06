@@ -1,5 +1,5 @@
 {
   "css.lint.unknownAtRules": "ignore",
   "liveServer.settings.root": "src/",
-  "liveServer.settings.port": 5175
+  "liveServer.settings.port": 5173
 }
