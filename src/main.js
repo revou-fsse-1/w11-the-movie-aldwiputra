@@ -10,7 +10,6 @@ const user = localStorage.getItem('loggedInUser');
 
 if (!user) {
   watchlistLinkButton.classList.add('invisible');
-  main.classList.remove('invisible');
 
   main.innerHTML = `
     <div class="w-fit mx-auto text-center flex flex-col items-center">
@@ -30,7 +29,13 @@ async function renderAllMovies() {
   const res = await getAllMovies();
 
   if (!res.success) {
-    console.log(res.message);
+    main.innerHTML = `
+      <div class="w-fit mx-auto text-center flex flex-col items-center">
+        <h1 class="text-4xl text-center font-semibold mt-12 text-slate-700">Failed fetching the data</h1>
+        <p class="mt-2 text-slate-500">Make sure that you have run the the <b>json-server</b></p>
+        <img src="./assets/illustration-error.svg" alt="unlock illustration" class="text-center w-full max-w-[15rem] mt-12"/>
+      </div>
+  `;
     return;
   }
 

@@ -23,12 +23,28 @@ if (!user) {
 
 getWatchlist().then((result) => {
   if (!result.success) {
-    console.log(result.message);
+    main.innerHTML = `
+      <div class="w-fit mx-auto text-center flex flex-col items-center">
+        <h1 class="text-4xl text-center font-semibold mt-12 text-slate-700">Failed fetching the data</h1>
+        <p class="mt-2 text-slate-500">Make sure that you have run the the <b>json-server</b></p>
+        <img src="../assets/illustration-error.svg" alt="unlock illustration" class="text-center w-full max-w-[15rem] mt-12"/>
+      </div>
+    `;
+    return;
+  }
+
+  if (!result.data.length) {
+    main.innerHTML = `
+      <div class="w-fit mx-auto text-center flex flex-col items-center">
+        <h1 class="text-4xl text-center font-semibold mt-12 text-slate-700">Your watchlist is empty</h1>
+        <p class="mt-2 text-slate-500">Start <strong>adding</strong> movies to the watchlist now!</p>
+        <img src="../assets/illustration-empty.svg" alt="unlock illustration" class="text-center w-[60rem] max-w-full"/>
+      </div>
+    `;
     return;
   }
 
   const movieComponentsHolder = [];
-
   result.data.forEach((movie) => {
     movieComponentsHolder.push(movieComponent(movie));
   });
@@ -57,9 +73,9 @@ function movieComponent(data) {
   return `
     <a
       href="/movies/${data.id}"
-      class="group relative max-w-[8.5rem] shrink-0 w-[8.5rem] rounded-xl overflow-hidden bg-zinc-700">
+      class="group relative max-w-[10rem] aspect-[2/3] shrink-0 w-[10rem] rounded-xl overflow-hidden bg-zinc-700">
       <img
-        class="w-full aspect-[2/3]"
+        class="w-full h-full"
         src="${data.image}" />
       <div
         class="absolute inset-0 pointer-events-none flex justify-center transition-opacity duration-200 items-center bg-sky-600/80 opacity-0 group-hover:opacity-100">
