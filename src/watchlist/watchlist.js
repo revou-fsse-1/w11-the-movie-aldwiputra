@@ -38,7 +38,7 @@ getWatchlist().then((result) => {
       <div class="w-fit mx-auto text-center flex flex-col items-center">
         <h1 class="text-4xl text-center font-semibold mt-12 text-slate-700">Your watchlist is empty</h1>
         <p class="mt-2 text-slate-500">Start <strong>adding</strong> movies to the watchlist now!</p>
-        <img src="../assets/illustration-empty.svg" alt="unlock illustration" class="text-center w-[60rem] max-w-full"/>
+        <img src="../assets/illustration-empty.svg" alt="unlock illustration" class="text-center w-[55rem] max-w-full"/>
       </div>
     `;
     return;

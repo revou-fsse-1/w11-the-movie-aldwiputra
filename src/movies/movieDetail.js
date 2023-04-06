@@ -10,6 +10,25 @@ const movieDescription = document.querySelector('#movie-description');
 const movieRating = document.querySelector('#movie-rating');
 const movieTrailer = document.querySelector('#movie-trailer');
 
+const main = document.querySelector('main > div');
+const watchlistLinkButton = document.querySelector('a[href="/watchlist"]');
+const user = localStorage.getItem('loggedInUser');
+
+if (!user) {
+  watchlistLinkButton.classList.add('invisible');
+
+  main.innerHTML = `
+    <div class="w-fit mx-auto text-center flex flex-col items-center">
+      <h1 class="text-3xl text-center font-semibold mt-12 text-slate-700">You're not logged in. Redirecting now...</h1>
+      <img src="../../assets/illustration-lock.png" alt="unlock illustration" class="text-center mt-12 -translate-x-8"/>
+    </div>
+  `;
+
+  setTimeout(() => {
+    window.location.pathname = '/login';
+  }, 2000);
+}
+
 renderMovie().then((res) => {
   // Add event listeners after first render movie
 

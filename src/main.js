@@ -13,7 +13,7 @@ if (!user) {
 
   main.innerHTML = `
     <div class="w-fit mx-auto text-center flex flex-col items-center">
-      <h1 class="text-3xl text-center font-semibold mt-24 text-slate-700">You're not logged in. Redirecting now...</h1>
+      <h1 class="text-3xl text-center font-semibold mt-12 text-slate-700">You're not logged in. Redirecting now...</h1>
       <img src="./assets/illustration-lock.png" alt="unlock illustration" class="text-center mt-12 -translate-x-8"/>
     </div>
   `;
