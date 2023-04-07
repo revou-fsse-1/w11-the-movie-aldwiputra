@@ -2,6 +2,10 @@
 
 The Movie Watchlist app is a project aimed at movie enthusiasts who want to keep track of the latest movies released in theaters or on streaming services. With an easy-to-use interface and a comprehensive movie database, this app allows users to search for movies, view movie details, and create their own watchlist.
 
+## Documentation
+
+Access the documentation link at: [API Documentation Link](https://documenter.getpostman.com/view/13853356/2s93RTQsZz)
+
 ## Pages
 
 - [Register](https://themw.netlify.app/register)
