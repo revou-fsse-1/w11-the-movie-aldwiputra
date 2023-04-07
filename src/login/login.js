@@ -7,6 +7,11 @@ const buttonSubmit = document.querySelector('button[type="submit"]');
 
 const toastElement = document.querySelector('#toast');
 
+const user = localStorage.getItem('loggedInUser');
+if (user) {
+  location.pathname = '/';
+}
+
 formLogin.addEventListener('submit', async (event) => {
   event.preventDefault();
 

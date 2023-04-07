@@ -10,6 +10,14 @@ The Movie Watchlist app is a project aimed at movie enthusiasts who want to keep
 - [Movie Detail](https://themw.netlify.app/movies/1)
 - [Watchlist](https://themw.netlify.app/watchlist)
 
+## Installation
+
+To install the application, follow these steps:
+
+Clone the repository: `git clone https://github.com/revou-fsse-1/w11-the-movie-aldwiputra.git`
+
+Install the dependencies: `npm install`
+
 ## Usage
 
 To use the application, run the following command:
@@ -23,7 +31,7 @@ npm install -g json-server
 2. Run the json-server:
 
 ```sh
-json-server db.json --watch
+npm run api
 ```
 
 3. Access the website at: [themw.netlify.app](https://themw.netlify.app)

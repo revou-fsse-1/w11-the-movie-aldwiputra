@@ -4,6 +4,8 @@ const id = urlComponents[urlComponents.length - 2];
 
 const addWatchlistButton = document.querySelector('#add-to-watchlist');
 const removeWatchlistButton = document.querySelector('#remove-from-watchlist');
+
+const movieTitle = document.querySelector('h1');
 const posterImage = document.querySelector('#poster-image');
 const genresContainer = document.querySelector('#genres');
 const movieDescription = document.querySelector('#movie-description');
@@ -89,6 +91,7 @@ async function renderMovie() {
     addWatchlistButton.classList.remove('invisible');
   }
 
+  movieTitle.innerText = res.data.title;
   posterImage.src = res.data.image;
   genresContainer.innerHTML = res.data.genre.map((genre) => genreComponent(genre)).join('');
   movieDescription.innerText = res.data.synopsis;
