@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost:3000';
+const API_ENDPOINT = 'http://localhost:3030';
 
 const currentlyWatchingContainer = document.querySelector('#currently-watching-list');
 const suggestedWatchContainer = document.querySelector('#suggested-watch-list');

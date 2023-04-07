@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "api": "json-server --watch ./json-server/db-movies.json"
+    "api": "json-server --watch ./json-server/db-movies.json --port 3030"
   },
   "keywords": [],
   "author": "",

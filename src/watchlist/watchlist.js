@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost:3000';
+const API_ENDPOINT = 'http://localhost:3030';
 
 const main = document.querySelector('#main-content');
 const flexWrapper = document.querySelector('#flex-wrapper');

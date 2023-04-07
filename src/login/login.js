@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost:3000';
+const API_ENDPOINT = 'http://localhost:3030';
 
 const formLogin = document.querySelector('#form-register');
 const usernameInput = document.querySelector('#username');

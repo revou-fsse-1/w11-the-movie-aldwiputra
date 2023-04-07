@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost:3000';
+const API_ENDPOINT = 'http://localhost:3030';
 const urlComponents = location.pathname.split('/');
 const id = urlComponents[urlComponents.length - 2];
 
